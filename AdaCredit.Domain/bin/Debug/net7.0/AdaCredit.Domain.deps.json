@@ -1,0 +1,70 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "AdaCredit.Domain/1.0.0": {
+        "dependencies": {
+          "AdaCredit.Repository": "1.0.0",
+          "ConsoleMenu-simple": "2.4.3"
+        },
+        "runtime": {
+          "AdaCredit.Domain.dll": {}
+        }
+      },
+      "BCrypt.Net-Next/4.0.3": {
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.0.3.0"
+          }
+        }
+      },
+      "ConsoleMenu-simple/2.4.3": {
+        "runtime": {
+          "lib/net5.0/ConsoleMenu.dll": {
+            "assemblyVersion": "2.4.3.0",
+            "fileVersion": "2.4.3.0"
+          }
+        }
+      },
+      "AdaCredit.Repository/1.0.0": {
+        "dependencies": {
+          "BCrypt.Net-Next": "4.0.3"
+        },
+        "runtime": {
+          "AdaCredit.Repository.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AdaCredit.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BCrypt.Net-Next/4.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "path": "bcrypt.net-next/4.0.3",
+      "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
+    },
+    "ConsoleMenu-simple/2.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wrjK/VTZU64eK0jXH3TAyw+omoYNrGtESk0FcdmPtCc4YhNQVEFdUgkioorS09dEPaTajRxQZU6Tg/uDl4Ofsg==",
+      "path": "consolemenu-simple/2.4.3",
+      "hashPath": "consolemenu-simple.2.4.3.nupkg.sha512"
+    },
+    "AdaCredit.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

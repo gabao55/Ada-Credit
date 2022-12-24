@@ -1,0 +1,12 @@
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/bin/Debug/net7.0/AdaCredit.Repository.deps.json
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/bin/Debug/net7.0/AdaCredit.Repository.dll
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/bin/Debug/net7.0/AdaCredit.Repository.pdb
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/obj/Debug/net7.0/AdaCredit.Repository.csproj.AssemblyReference.cache
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/obj/Debug/net7.0/AdaCredit.Repository.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/obj/Debug/net7.0/AdaCredit.Repository.AssemblyInfoInputs.cache
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/obj/Debug/net7.0/AdaCredit.Repository.AssemblyInfo.cs
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/obj/Debug/net7.0/AdaCredit.Repository.csproj.CoreCompileInputs.cache
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/obj/Debug/net7.0/AdaCredit.Repository.dll
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/obj/Debug/net7.0/refint/AdaCredit.Repository.dll
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/obj/Debug/net7.0/AdaCredit.Repository.pdb
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/obj/Debug/net7.0/ref/AdaCredit.Repository.dll

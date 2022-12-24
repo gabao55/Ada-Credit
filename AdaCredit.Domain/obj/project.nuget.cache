@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "uNMtBOEWXt+YvuVHhHJ3mcRA+gEWjeu+tNMAb/Lkhn++c7dBYLLY2oe6l2TYg6A4W4+9CRknFACLHKN0ZkSjNA==",
+  "success": true,
+  "projectFilePath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/AdaCredit.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/gabriel/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/consolemenu-simple/2.4.3/consolemenu-simple.2.4.3.nupkg.sha512"
+  ],
+  "logs": []
+}

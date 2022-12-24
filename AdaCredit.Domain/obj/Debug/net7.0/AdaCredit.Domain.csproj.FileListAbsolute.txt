@@ -1,0 +1,15 @@
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/Debug/net7.0/AdaCredit.Domain.csproj.AssemblyReference.cache
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/Debug/net7.0/AdaCredit.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/Debug/net7.0/AdaCredit.Domain.AssemblyInfoInputs.cache
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/Debug/net7.0/AdaCredit.Domain.AssemblyInfo.cs
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/Debug/net7.0/AdaCredit.Domain.csproj.CoreCompileInputs.cache
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/bin/Debug/net7.0/AdaCredit.Domain.deps.json
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/bin/Debug/net7.0/AdaCredit.Domain.dll
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/bin/Debug/net7.0/AdaCredit.Domain.pdb
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/Debug/net7.0/AdaCredit.Domain.dll
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/Debug/net7.0/refint/AdaCredit.Domain.dll
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/Debug/net7.0/AdaCredit.Domain.pdb
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/Debug/net7.0/ref/AdaCredit.Domain.dll
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/bin/Debug/net7.0/AdaCredit.Repository.dll
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/bin/Debug/net7.0/AdaCredit.Repository.pdb
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/Debug/net7.0/AdaCredit.Domain.csproj.CopyComplete

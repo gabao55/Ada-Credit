@@ -1,0 +1,197 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/AdaCredit.Console.csproj": {}
+  },
+  "projects": {
+    "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/AdaCredit.Console.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/AdaCredit.Console.csproj",
+        "projectName": "AdaCredit.Console",
+        "projectPath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/AdaCredit.Console.csproj",
+        "packagesPath": "/home/gabriel/.nuget/packages/",
+        "outputPath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gabriel/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/AdaCredit.Domain.csproj": {
+                "projectPath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/AdaCredit.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "ConsoleMenu-simple": {
+              "target": "Package",
+              "version": "[2.4.3, )"
+            },
+            "Faker.Net": {
+              "target": "Package",
+              "version": "[2.0.154, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/AdaCredit.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/AdaCredit.Domain.csproj",
+        "projectName": "AdaCredit.Domain",
+        "projectPath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/AdaCredit.Domain.csproj",
+        "packagesPath": "/home/gabriel/.nuget/packages/",
+        "outputPath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gabriel/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/AdaCredit.Repository.csproj": {
+                "projectPath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/AdaCredit.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "ConsoleMenu-simple": {
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/AdaCredit.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/AdaCredit.Repository.csproj",
+        "projectName": "AdaCredit.Repository",
+        "projectPath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/AdaCredit.Repository.csproj",
+        "packagesPath": "/home/gabriel/.nuget/packages/",
+        "outputPath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gabriel/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
