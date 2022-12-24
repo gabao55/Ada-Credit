@@ -30,9 +30,23 @@ public sealed class Account
         AdaCreditRepository.Account.CreateNewAccount(newAccount);
     }
 
-    public static void PrintClientData()
+    public static AdaCreditRepository.AccountData GetAccountData(int clientId)
     {
+        List<AdaCreditRepository.AccountData> accountsList = AdaCreditRepository.Account.GetAllAccounts();
 
+        AdaCreditRepository.AccountData account = accountsList.First(account => account.ClientId == clientId);
+
+        return account;
+    }
+
+    public static void PrintAccountData(int clientId)
+    {
+        AdaCreditRepository.AccountData data = GetAccountData(clientId);
+
+        Console.WriteLine($"Number: {data.Number}");
+        Console.WriteLine($"Branch: {data.Branch}");
+        Console.WriteLine($"Balance: $ {data.Balance.ToString()}");
+        
     }
 
     private static string GenerateRandomAccountNumber()

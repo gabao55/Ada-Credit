@@ -44,4 +44,40 @@ public sealed class Client
 
         AdaCreditDomain.Account.CreateNewAccount(newClient.Id);
     }
+
+    public static void GetClientData()
+    {
+        Console.Clear();
+
+        List<AdaCreditRepository.ClientData> clientsList = AdaCreditRepository.Client.GetAllClients();
+
+        Console.Write("Please insert client's document (e.g.: ID): ");
+        string? document = Console.ReadLine();
+        while (document == null)
+        {
+            Console.Write("Invalid document, please insert again: ");
+            document = Console.ReadLine();
+        }
+
+        AdaCreditRepository.ClientData? client = clientsList.FirstOrDefault(client => client.Document == document);
+
+        if (client == null) {
+            Console.WriteLine($"No client registered with document {document}");
+            Console.WriteLine("\nPress enter to return to client's menu");
+            Console.ReadLine();
+            return;
+        }
+
+        PrintClientData(client);
+        AdaCreditDomain.Account.PrintAccountData(client.Id);
+        Console.WriteLine("\nPress enter to return to client's menu");
+        Console.ReadLine();
+    }
+
+    public static void PrintClientData(AdaCreditRepository.ClientData data)
+    {
+        Console.WriteLine("Client's data:\n");
+        Console.WriteLine($"Name: {data.Name}");
+        Console.WriteLine($"Document: {data.Document}");
+    }
 }
