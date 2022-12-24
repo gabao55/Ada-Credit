@@ -1,9 +1,8 @@
-﻿using BCrypt.Net;
-using static BCrypt.Net.BCrypt;
+﻿using static BCrypt.Net.BCrypt;
 
 namespace AdaCreditRepository;
 
-public static class Admin
+public sealed class Admin
 {
     private static string DataFilePath;
     private static int salt;

@@ -13,4 +13,3 @@ public sealed class Client
         Account = Account.CreateNewAccount();
     }
 }
-
