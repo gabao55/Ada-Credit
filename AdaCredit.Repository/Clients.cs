@@ -31,19 +31,30 @@ public sealed class Client
     public static void CreateNewClient(ClientData data) {
         List<ClientData> records = GetAllClients();
         records.Add(data);
-
-        using (var writer = new StreamWriter(DataFilePath))
-        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
-        {
-            csv.WriteRecords(records);
-        }
+        
+        SaveData(records);
     }
 
     public static void DeleteClientData(int id) {
         List<ClientData> records = GetAllClients();
 
         records.RemoveAll(client => client.Id == id);
+        
+        SaveData(records);
+    }
 
+    public static void ChangeClientData(int id, ClientData data) {
+        List<ClientData> records = GetAllClients();
+
+        ClientData client = records.First(client => client.Id == id);
+
+        client.Name = data.Name;
+        client.Document = data.Document;
+
+        SaveData(records);
+    }
+
+    public static void SaveData(List<ClientData> records) {
         using (var writer = new StreamWriter(DataFilePath))
         using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
         {

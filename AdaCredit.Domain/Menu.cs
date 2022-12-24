@@ -25,17 +25,18 @@ public sealed class Menu
 
     private static void ShowClientsMenu(string[] args)
     {
+
         var clientsMenu = new ConsoleMenu(args, level: 1)
             .Add("Register new client", () => AdaCreditDomain.Client.CreateClient())
             .Add("Query existing client data", () => AdaCreditDomain.Client.GetClientData())
-            .Add("Change existing client data", () => SomeAction("Sub_Three"))
+            .Add("Change existing client data", () => AdaCreditDomain.Client.ChangeClientData())
             .Add("Remove existing client", () => AdaCreditDomain.Client.DeleteClientData())
             .Add("Get back to main menu", ConsoleMenu.Close)
             .Configure(config =>
             {
             config.Selector = "--> ";
             config.EnableFilter = true;
-            config.Title = "Submenu";
+            config.Title = "Clients menu";
             config.EnableBreadcrumb = true;
             config.WriteBreadcrumbAction = titles => Console.WriteLine(string.Join(" / ", titles));
             });
@@ -54,7 +55,7 @@ public sealed class Menu
             {
             config.Selector = "--> ";
             config.EnableFilter = true;
-            config.Title = "Submenu";
+            config.Title = "Employees menu";
             config.EnableBreadcrumb = true;
             config.WriteBreadcrumbAction = titles => Console.WriteLine(string.Join(" / ", titles));
             });
@@ -71,7 +72,7 @@ public sealed class Menu
             {
             config.Selector = "--> ";
             config.EnableFilter = true;
-            config.Title = "Submenu";
+            config.Title = "Transactions menu";
             config.EnableBreadcrumb = true;
             config.WriteBreadcrumbAction = titles => Console.WriteLine(string.Join(" / ", titles));
             });
@@ -91,7 +92,7 @@ public sealed class Menu
             {
             config.Selector = "--> ";
             config.EnableFilter = true;
-            config.Title = "Submenu";
+            config.Title = "Reports menu";
             config.EnableBreadcrumb = true;
             config.WriteBreadcrumbAction = titles => Console.WriteLine(string.Join(" / ", titles));
             });

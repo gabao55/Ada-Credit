@@ -111,4 +111,64 @@ public sealed class Client
         Console.WriteLine("\nPress enter to return to client's menu");
         Console.ReadLine();
     }
+
+    public static void ChangeClientData()
+    {
+        Console.Clear();
+
+        Console.Write("Please insert client's document (e.g.: ID): ");
+        string? document = Console.ReadLine();
+        while (document == null)
+        {
+            Console.Write("Invalid document, please insert again: ");
+            document = Console.ReadLine();
+        }
+
+        List<AdaCreditRepository.ClientData> clientsList = AdaCreditRepository.Client.GetAllClients();
+
+        AdaCreditRepository.ClientData? client = clientsList.FirstOrDefault(client => client.Document == document);
+
+        if (client == null) {
+            Console.WriteLine($"No client registered with document {document}");
+            Console.WriteLine("\nPress enter to return to client's menu");
+            Console.ReadLine();
+            return;
+        }
+
+        Console.WriteLine("\nClient found.");
+        
+        Console.Write("Insert new client's name: ");        
+        string? name = Console.ReadLine();
+        while (name == null)
+        {
+            Console.Write("Invalid name, please insert again: ");
+            name = Console.ReadLine();
+        }
+
+        Console.Write("Insert new client's document (e.g.: ID): ");        
+        document = Console.ReadLine();
+        while (document == null)
+        {
+            Console.Write("Invalid document, please insert again: ");
+            document = Console.ReadLine();
+        }
+        
+        while (document == null || clientsList.FirstOrDefault(client => client.Document == document) != client)
+        {
+            Console.Write("Document already registered, please insert another document: ");
+            document = Console.ReadLine();
+        }
+
+        AdaCreditRepository.ClientData modifiedClient = new AdaCreditRepository.ClientData {
+            Id = client.Id,
+            Name = name,
+            Document = document,
+        };
+
+        AdaCreditRepository.Client.ChangeClientData(client.Id, modifiedClient);
+        
+        Console.WriteLine("Client data successfuly modified.");
+        Console.WriteLine("\nPress enter to return to client's menu");
+        Console.ReadLine();
+    }
 }
