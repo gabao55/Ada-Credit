@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xIOdPv4Au/8PgxC7wwUf1+ooBSeNJ750sNYKEMlO7O94A95aBTWHOrR8CMgZZGCi11vrkN4oL6OXCyZnJFbFUQ==",
+  "dgSpecHash": "qCw5ZCByvd8tJMt53GA0cCRqC3BGYtBDsYG9iHmuo6V2RnkQByr6GFpfTMMPeFtODgbDdEMpB7/ylSRnSTUtVA==",
   "success": true,
   "projectFilePath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/AdaCredit.Console.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/home/gabriel/.nuget/packages/consolemenu-simple/2.4.3/consolemenu-simple.2.4.3.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/csvhelper/30.0.1/csvhelper.30.0.1.nupkg.sha512",
     "/home/gabriel/.nuget/packages/faker.net/2.0.154/faker.net.2.0.154.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"

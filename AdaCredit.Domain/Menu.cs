@@ -20,28 +20,13 @@ public sealed class Menu
             config.EnableBreadcrumb = true;
             });
 
-        var subMenu = new ConsoleMenu(args, level: 1)
-            .Add("Sub_One", () => SomeAction("Sub_One"))
-            .Add("Sub_Two", () => SomeAction("Sub_Two"))
-            .Add("Sub_Three", () => SomeAction("Sub_Three"))
-            .Add("Sub_Four", () => SomeAction("Sub_Four"))
-            .Add("Sub_Close", ConsoleMenu.Close)
-            .Configure(config =>
-            {
-            config.Selector = "--> ";
-            config.EnableFilter = true;
-            config.Title = "Clients menu";
-            config.EnableBreadcrumb = true;
-            config.WriteBreadcrumbAction = titles => Console.WriteLine(string.Join(" / ", titles));
-            });
-
         menu.Show();
     }
 
     private static void ShowClientsMenu(string[] args)
     {
         var clientsMenu = new ConsoleMenu(args, level: 1)
-            .Add("Register new client", () => SomeAction("Sub_One"))
+            .Add("Register new client", () => AdaCreditDomain.Client.CreateClient())
             .Add("Query existing client data", () => SomeAction("Sub_Two"))
             .Add("Change existing client data", () => SomeAction("Sub_Three"))
             .Add("Remove existing client", () => SomeAction("Sub_Four"))
