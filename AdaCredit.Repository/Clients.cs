@@ -38,6 +38,18 @@ public sealed class Client
             csv.WriteRecords(records);
         }
     }
+
+    public static void DeleteClientData(int id) {
+        List<ClientData> records = GetAllClients();
+
+        records.RemoveAll(client => client.Id == id);
+
+        using (var writer = new StreamWriter(DataFilePath))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecords(records);
+        }
+    }
 }
 
 public sealed class ClientData

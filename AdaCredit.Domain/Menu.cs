@@ -29,7 +29,7 @@ public sealed class Menu
             .Add("Register new client", () => AdaCreditDomain.Client.CreateClient())
             .Add("Query existing client data", () => AdaCreditDomain.Client.GetClientData())
             .Add("Change existing client data", () => SomeAction("Sub_Three"))
-            .Add("Remove existing client", () => SomeAction("Sub_Four"))
+            .Add("Remove existing client", () => AdaCreditDomain.Client.DeleteClientData())
             .Add("Get back to main menu", ConsoleMenu.Close)
             .Configure(config =>
             {

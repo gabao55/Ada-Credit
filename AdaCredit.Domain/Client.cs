@@ -49,8 +49,6 @@ public sealed class Client
     {
         Console.Clear();
 
-        List<AdaCreditRepository.ClientData> clientsList = AdaCreditRepository.Client.GetAllClients();
-
         Console.Write("Please insert client's document (e.g.: ID): ");
         string? document = Console.ReadLine();
         while (document == null)
@@ -58,6 +56,8 @@ public sealed class Client
             Console.Write("Invalid document, please insert again: ");
             document = Console.ReadLine();
         }
+
+        List<AdaCreditRepository.ClientData> clientsList = AdaCreditRepository.Client.GetAllClients();
 
         AdaCreditRepository.ClientData? client = clientsList.FirstOrDefault(client => client.Document == document);
 
@@ -79,5 +79,36 @@ public sealed class Client
         Console.WriteLine("Client's data:\n");
         Console.WriteLine($"Name: {data.Name}");
         Console.WriteLine($"Document: {data.Document}");
+    }
+
+    public static void DeleteClientData()
+    {
+        Console.Clear();
+
+        Console.Write("Please insert client's document (e.g.: ID): ");
+        string? document = Console.ReadLine();
+        while (document == null)
+        {
+            Console.Write("Invalid document, please insert again: ");
+            document = Console.ReadLine();
+        }
+
+        List<AdaCreditRepository.ClientData> clientsList = AdaCreditRepository.Client.GetAllClients();
+
+        AdaCreditRepository.ClientData? client = clientsList.FirstOrDefault(client => client.Document == document);
+
+        if (client == null) {
+            Console.WriteLine($"No client registered with document {document}");
+            Console.WriteLine("\nPress enter to return to client's menu");
+            Console.ReadLine();
+            return;
+        }
+
+        AdaCreditRepository.Client.DeleteClientData(client.Id);
+        AdaCreditRepository.Account.DeleteAccountData(client.Id);
+        
+        Console.WriteLine("Client data successfuly deleted.");
+        Console.WriteLine("\nPress enter to return to client's menu");
+        Console.ReadLine();
     }
 }
