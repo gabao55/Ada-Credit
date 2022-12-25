@@ -35,21 +35,21 @@ public sealed class Employee
         SaveData(records);
     }
 
-    public static void DeleteEmployeeData(int id) {
+    public static void DeactivateEmployeeRegistration(int id) {
         List<EmployeeData> records = GetAllEmployees();
-
-        records.RemoveAll(Employee => Employee.Id == id);
+        
+        EmployeeData employee = records.First(e => e.Id == id);
+        employee.IsActive = false;
         
         SaveData(records);
     }
 
-    public static void ChangeEmployeeData(int id, EmployeeData data) {
+    public static void ChangeEmployeePassword(int id, string newPassword) {
         List<EmployeeData> records = GetAllEmployees();
 
         EmployeeData Employee = records.First(Employee => Employee.Id == id);
 
-        Employee.Name = data.Name;
-        Employee.Document = data.Document;
+        Employee.Password = newPassword;
 
         SaveData(records);
     }

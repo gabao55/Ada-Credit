@@ -76,7 +76,7 @@ public sealed class Employee
         Console.ReadLine();
     }
 
-    public static void GetEmployeeData()
+    public static void DeactivateEmployeeRegistration()
     {
         Console.Clear();
 
@@ -99,51 +99,14 @@ public sealed class Employee
             return;
         }
 
-        PrintEmployeeData(Employee);
-        AdaCreditDomain.Account.PrintAccountData(Employee.Id);
-        Console.WriteLine("\nPress enter to return to Employee's menu");
-        Console.ReadLine();
-    }
-
-    public static void PrintEmployeeData(AdaCreditRepository.EmployeeData data)
-    {
-        Console.WriteLine("Employee's data:\n");
-        Console.WriteLine($"Name: {data.Name}");
-        Console.WriteLine($"Document: {data.Document}");
-    }
-
-    public static void DeleteEmployeeData()
-    {
-        Console.Clear();
-
-        Console.Write("Please insert Employee's document (e.g.: ID): ");
-        string? document = Console.ReadLine();
-        while (document == null)
-        {
-            Console.Write("Invalid document, please insert again: ");
-            document = Console.ReadLine();
-        }
-
-        List<AdaCreditRepository.EmployeeData> EmployeesList = AdaCreditRepository.Employee.GetAllEmployees();
-
-        AdaCreditRepository.EmployeeData? Employee = EmployeesList.FirstOrDefault(Employee => Employee.Document == document);
-
-        if (Employee == null) {
-            Console.WriteLine($"No Employee registered with document {document}");
-            Console.WriteLine("\nPress enter to return to Employee's menu");
-            Console.ReadLine();
-            return;
-        }
-
-        AdaCreditRepository.Employee.DeleteEmployeeData(Employee.Id);
-        AdaCreditRepository.Account.DeleteAccountData(Employee.Id);
+        AdaCreditRepository.Employee.DeactivateEmployeeRegistration(Employee.Id);
         
-        Console.WriteLine("Employee data successfuly deleted.");
+        Console.WriteLine("Employee registration successfuly deactivated.");
         Console.WriteLine("\nPress enter to return to Employee's menu");
         Console.ReadLine();
     }
 
-    public static void ChangeEmployeeData()
+    public static void ChangeEmployeePassword()
     {
         Console.Clear();
 
@@ -167,38 +130,21 @@ public sealed class Employee
         }
 
         Console.WriteLine("\nEmployee found.");
-        
-        Console.Write("Insert new Employee's name: ");        
-        string? name = Console.ReadLine();
-        while (name == null)
+
+        Console.Write("Insert new Employee's password: ");        
+        string? password = Console.ReadLine();
+        while (password == null)
         {
-            Console.Write("Invalid name, please insert again: ");
-            name = Console.ReadLine();
+            Console.Write("Invalid password, please insert again: ");
+            password = Console.ReadLine();
         }
 
-        Console.Write("Insert new Employee's document (e.g.: ID): ");        
-        document = Console.ReadLine();
-        while (document == null)
-        {
-            Console.Write("Invalid document, please insert again: ");
-            document = Console.ReadLine();
-        }
-        
-        while (document == null || EmployeesList.FirstOrDefault(Employee => Employee.Document == document) != Employee)
-        {
-            Console.Write("Document already registered, please insert another document: ");
-            document = Console.ReadLine();
-        }
+        int salt = 12;
+        string hashedPassword = HashPassword(password, salt);
 
-        AdaCreditRepository.EmployeeData modifiedEmployee = new AdaCreditRepository.EmployeeData {
-            Id = Employee.Id,
-            Name = name,
-            Document = document,
-        };
-
-        AdaCreditRepository.Employee.ChangeEmployeeData(Employee.Id, modifiedEmployee);
+        AdaCreditRepository.Employee.ChangeEmployeePassword(Employee.Id, hashedPassword);
         
-        Console.WriteLine("Employee data successfuly modified.");
+        Console.WriteLine("Employee password successfuly modified.");
         Console.WriteLine("\nPress enter to return to Employee's menu");
         Console.ReadLine();
     }

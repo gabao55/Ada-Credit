@@ -48,8 +48,8 @@ public sealed class Menu
     {
         var clientsMenu = new ConsoleMenu(args, level: 1)
             .Add("Register new employee", () => AdaCreditDomain.Employee.CreateEmployee())
-            .Add("Change existing employee password", () => SomeAction("Sub_Three"))
-            .Add("Remove existing employee", () => SomeAction("Sub_Four"))
+            .Add("Change existing employee password", () => AdaCreditDomain.Employee.ChangeEmployeePassword())
+            .Add("Deactivate employee registration", () => AdaCreditDomain.Employee.DeactivateEmployeeRegistration())
             .Add("Get back to main menu", ConsoleMenu.Close)
             .Configure(config =>
             {
