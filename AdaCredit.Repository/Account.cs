@@ -40,18 +40,6 @@ public sealed class Account
             csv.WriteRecords(records);
         }
     }
-
-    public static void DeleteAccountData(int clientId) {
-        List<AccountData> records = GetAllAccounts();
-
-        records.RemoveAll(account => account.ClientId == clientId);
-
-        using (var writer = new StreamWriter(DataFilePath))
-        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
-        {
-            csv.WriteRecords(records);
-        }
-    }
 }
 
 public sealed class AccountData

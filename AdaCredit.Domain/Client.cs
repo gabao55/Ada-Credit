@@ -38,6 +38,7 @@ public sealed class Client
             Id = id,
             Name = name,
             Document = document,
+            IsActive = true,
         };
 
         AdaCreditRepository.Client.CreateNewClient(newClient);
@@ -81,7 +82,7 @@ public sealed class Client
         Console.WriteLine($"Document: {data.Document}");
     }
 
-    public static void DeleteClientData()
+    public static void DeactivateClientData()
     {
         Console.Clear();
 
@@ -104,10 +105,9 @@ public sealed class Client
             return;
         }
 
-        AdaCreditRepository.Client.DeleteClientData(client.Id);
-        AdaCreditRepository.Account.DeleteAccountData(client.Id);
+        AdaCreditRepository.Client.DeactivateClientData(client.Id);
         
-        Console.WriteLine("Client data successfuly deleted.");
+        Console.WriteLine("Client data successfuly deactivated.");
         Console.WriteLine("\nPress enter to return to client's menu");
         Console.ReadLine();
     }

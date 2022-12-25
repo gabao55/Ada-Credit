@@ -35,10 +35,11 @@ public sealed class Client
         SaveData(records);
     }
 
-    public static void DeleteClientData(int id) {
+    public static void DeactivateClientData(int id) {
         List<ClientData> records = GetAllClients();
-
-        records.RemoveAll(client => client.Id == id);
+        
+        ClientData client = records.First(c => c.Id == id);
+        client.IsActive = false;
         
         SaveData(records);
     }
@@ -68,4 +69,5 @@ public sealed class ClientData
     public int Id { get; set; }
     public string Name { get; set; }
     public string Document { get; set; }
+    public bool IsActive { get; set; }
 }

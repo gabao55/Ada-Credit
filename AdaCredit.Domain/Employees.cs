@@ -66,6 +66,7 @@ public sealed class Employee
             Document = document,
             Username = username,
             Password = hashedPassword,
+            LastLogin = DateTime.Now,
             IsActive = true,
         };
 
