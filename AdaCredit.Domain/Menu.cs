@@ -47,7 +47,7 @@ public sealed class Menu
     private static void ShowEmployeesMenu(string[] args)
     {
         var clientsMenu = new ConsoleMenu(args, level: 1)
-            .Add("Register new employee", () => SomeAction("Sub_One"))
+            .Add("Register new employee", () => AdaCreditDomain.Employee.CreateEmployee())
             .Add("Change existing employee password", () => SomeAction("Sub_Three"))
             .Add("Remove existing employee", () => SomeAction("Sub_Four"))
             .Add("Get back to main menu", ConsoleMenu.Close)
