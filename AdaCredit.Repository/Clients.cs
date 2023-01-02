@@ -69,5 +69,6 @@ public sealed class ClientData
     public int Id { get; set; }
     public string Name { get; set; }
     public string Document { get; set; }
+    public DateTime LastLogin { get; set; }
     public bool IsActive { get; set; }
 }

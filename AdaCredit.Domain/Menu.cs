@@ -66,7 +66,7 @@ public sealed class Menu
     private static void ShowTransactionsMenu(string[] args)
     {
         var clientsMenu = new ConsoleMenu(args, level: 1)
-            .Add("Process Transactions (Bank Reconciliation)", () => SomeAction("Sub_One"))
+            .Add("Process Transactions (Bank Reconciliation)", () => AdaCreditDomain.Transactions.ProcessAllTransactions())
             .Add("Get back to main menu", ConsoleMenu.Close)
             .Configure(config =>
             {

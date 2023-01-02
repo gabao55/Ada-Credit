@@ -80,6 +80,7 @@ public sealed class Client
         Console.WriteLine("Client's data:\n");
         Console.WriteLine($"Name: {data.Name}");
         Console.WriteLine($"Document: {data.Document}");
+        Console.WriteLine($"Last login: {data.LastLogin}");
     }
 
     public static void DeactivateClientData()

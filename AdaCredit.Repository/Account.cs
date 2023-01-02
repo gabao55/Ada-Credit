@@ -33,7 +33,29 @@ public sealed class Account
     public static void CreateNewAccount(AccountData data) {
         List<AccountData> records = GetAllAccounts();
         records.Add(data);
+        
+        SaveData(records);
+    }
 
+    public static void UpdateBalance(int accountId, double newBalance)
+    {
+        List<AccountData> records = GetAllAccounts();
+        AccountData account = records.First(a => a.Id == accountId);
+        account.Balance = Math.Round(newBalance, 2);
+        
+
+        SaveData(records);
+    }
+
+    public static AccountData? GetAccountData(string accountNumber)
+    {
+        List<AccountData> records = GetAllAccounts();
+        AccountData? account = records.FirstOrDefault(a => a.Number == accountNumber);
+
+        return account;
+    }
+
+    public static void SaveData(List<AccountData> records) {
         using (var writer = new StreamWriter(DataFilePath))
         using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
         {
