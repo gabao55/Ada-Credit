@@ -9,19 +9,32 @@ public sealed class Transactions
         Console.Clear();
 
         List<string> transactionsFilesList = AdaCreditRepository.Transaction.GetTransactionFiles();
-        List<string> failedTransactionFiles = new List<string>();
+        if(transactionsFilesList.Count() == 0) {
+            Console.WriteLine("No new transactions to be processed");
+        
+            Console.WriteLine("\nPress enter to return to transactions' menu");
+            Console.ReadLine();
+
+            return;
+        }
+
+        AdaCreditRepository.TransactionErrors.ResetErrors();
+
+        
         foreach (string file in transactionsFilesList)
         {
             bool fileCheck = ProcessFileTransactions(file);
-            AdaCreditRepository.Transaction.MoveTransactionFile(file, fileCheck, failedTransactionFiles);
+            AdaCreditRepository.Transaction.MoveTransactionFile(file, fileCheck);
         }
+
+        List<AdaCreditRepository.TransactionErrorData> failedTransactionFiles = AdaCreditRepository.TransactionErrors.GetAllErrors();
 
         if (failedTransactionFiles.Count() > 0)
         {
             Console.WriteLine("An error has occurred processing the transaction files below:");
-            foreach (string fileName in failedTransactionFiles)
+            foreach (AdaCreditRepository.TransactionErrorData error in failedTransactionFiles)
             {
-                Console.WriteLine(fileName);
+                Console.WriteLine(error.FileName);
             }
         }
         else
@@ -39,7 +52,11 @@ public sealed class Transactions
         foreach (AdaCreditRepository.TransactionData transacation in transactions)
         {
             if (transacation.TransactionType == "TEF" && (transacation.DestinationBankCode != transacation.OriginBankCode))
+            {
+                AdaCreditRepository.TransactionErrors.CreateNewError(transacation, filePath, "TEF");
                 return false;
+            }
+
             AdaCreditRepository.AccountData? originAccount = null;
             AdaCreditRepository.AccountData? destinationAccount = null;
             
@@ -47,21 +64,30 @@ public sealed class Transactions
             {
                 originAccount = AdaCreditRepository.Account.GetAccountData(transacation.OriginBankAccountNumber);
                 if (originAccount == null)
+                {
+                    AdaCreditRepository.TransactionErrors.CreateNewError(transacation, filePath, "Origin account not found");
                     return false;
+                }
             }
             
             if (transacation.DestinationBankCode == "777")
             {
                 destinationAccount = AdaCreditRepository.Account.GetAccountData(transacation.DestinationBankAccountNumber);
                 if (destinationAccount == null)
+                {
+                    AdaCreditRepository.TransactionErrors.CreateNewError(transacation, filePath, "Destination account not found");
                     return false;
+                }
             }
 
             double tax = GetTransactionTax(transacation.TransactionType, transacation.TransactionValue);
             if (transacation.TransactionDirection == 0 && originAccount != null)
             {
                 if (transacation.TransactionValue + tax > originAccount.Balance)
+                {
+                    AdaCreditRepository.TransactionErrors.CreateNewError(transacation, filePath, "Origin account has not enough money");
                     return false;
+                }
                 AdaCreditRepository.Account.UpdateBalance(originAccount.Id, originAccount.Balance - (transacation.TransactionValue + tax));
                 if (destinationAccount != null)
                     AdaCreditRepository.Account.UpdateBalance(destinationAccount.Id, destinationAccount.Balance + transacation.TransactionValue);
@@ -69,7 +95,10 @@ public sealed class Transactions
             if (transacation.TransactionDirection == 1 && destinationAccount != null)
             {
                 if (transacation.TransactionValue + tax > destinationAccount.Balance)
+                {
+                    AdaCreditRepository.TransactionErrors.CreateNewError(transacation, filePath, "Destination account has not enough money");
                     return false;
+                }
                 AdaCreditRepository.Account.UpdateBalance(destinationAccount.Id, destinationAccount.Balance - (transacation.TransactionValue + tax));
                 if (originAccount != null)
                     AdaCreditRepository.Account.UpdateBalance(originAccount.Id, originAccount.Balance + transacation.TransactionValue);

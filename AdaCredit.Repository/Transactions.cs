@@ -48,7 +48,7 @@ public sealed class Transaction
         }
     }
 
-    public static void MoveTransactionFile(string filePath, bool completed, List<string> failedTransactionFiles)
+    public static void MoveTransactionFile(string filePath, bool completed)
     {
         string fileName = filePath.Split("/").Last();
         string newFilePath;
@@ -58,7 +58,6 @@ public sealed class Transaction
         else
         {
             newFilePath = Path.Combine(FailedFilesPath, fileName);
-            failedTransactionFiles.Add(newFilePath);
         }
         
         File.Move(filePath, newFilePath);
