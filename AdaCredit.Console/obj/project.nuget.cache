@@ -1,15 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "qCw5ZCByvd8tJMt53GA0cCRqC3BGYtBDsYG9iHmuo6V2RnkQByr6GFpfTMMPeFtODgbDdEMpB7/ylSRnSTUtVA==",
+  "dgSpecHash": "EkCAt4LcQhSUR+sU3Wd1GegHn3/qo604//LIzliJ6krGjdkLeJYct2TRLGW+r3qTl5DAzfGByqhLoAX2Q5w4mw==",
   "success": true,
   "projectFilePath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/AdaCredit.Console.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/home/gabriel/.nuget/packages/consolemenu-simple/2.4.3/consolemenu-simple.2.4.3.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/consoletables/2.4.2/consoletables.2.4.2.nupkg.sha512",
     "/home/gabriel/.nuget/packages/csvhelper/30.0.1/csvhelper.30.0.1.nupkg.sha512",
     "/home/gabriel/.nuget/packages/faker.net/2.0.154/faker.net.2.0.154.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/home/gabriel/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+    "/home/gabriel/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/system.io/4.3.0/system.io.4.3.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/system.reflection.primitives/4.3.0/system.reflection.primitives.4.3.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/system.reflection.typeextensions/4.3.0/system.reflection.typeextensions.4.3.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

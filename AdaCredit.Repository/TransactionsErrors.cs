@@ -21,7 +21,7 @@ public sealed class TransactionErrors
 
     public static void ResetErrors()
     {
-        string initialData = "Id,FileName,Error";
+        string initialData = "Id,FileName,Date,OriginBankCode,OriginBankBranch,OriginBankAccountNumber,DestinationBankCode,DestinationBankBranch,DestinationBankAccountNumber,TransactionType,TransactionDirection,TransactionValue,Error";
         File.WriteAllText(DataFilePath, initialData);
     }
 
@@ -43,7 +43,17 @@ public sealed class TransactionErrors
         records.Add(
             new TransactionErrorData {
                 Id = records.Count() == 0 ? 1 : records.Last().Id + 1,
-                FileName = filePath,
+                FileName = filePath.Split("/").Last(),
+                Date = DateTime.Now,
+                OriginBankCode = data.OriginBankCode,
+                OriginBankBranch = data.OriginBankBranch,
+                OriginBankAccountNumber = data.OriginBankAccountNumber,
+                DestinationBankCode = data.DestinationBankCode,
+                DestinationBankBranch = data.DestinationBankBranch,
+                DestinationBankAccountNumber = data.DestinationBankAccountNumber,
+                TransactionType = data.TransactionType,
+                TransactionDirection = data.TransactionDirection,
+                TransactionValue = data.TransactionValue,
                 Error = error,
             }
         );
@@ -83,5 +93,15 @@ public sealed class TransactionErrorData
 {
     public int Id { get; set; }
     public string FileName { get; set; }
+    public DateTime Date { get; set; }
+    public string OriginBankCode { get; set; }
+    public string OriginBankBranch { get; set; }
+    public string OriginBankAccountNumber { get; set; }
+    public string DestinationBankCode { get; set; }
+    public string DestinationBankBranch { get; set; }
+    public string DestinationBankAccountNumber { get; set; }
+    public string TransactionType { get; set; }
+    public int TransactionDirection { get; set; }
+    public double TransactionValue { get; set; }
     public string Error { get; set; }
 }

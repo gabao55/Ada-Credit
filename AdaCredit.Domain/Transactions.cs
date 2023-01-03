@@ -9,6 +9,7 @@ public sealed class Transactions
         Console.Clear();
 
         List<string> transactionsFilesList = AdaCreditRepository.Transaction.GetTransactionFiles();
+        List<string> failedTransactionFiles = new List<string>();
         if(transactionsFilesList.Count() == 0) {
             Console.WriteLine("No new transactions to be processed");
         
@@ -17,24 +18,21 @@ public sealed class Transactions
 
             return;
         }
-
-        AdaCreditRepository.TransactionErrors.ResetErrors();
-
         
         foreach (string file in transactionsFilesList)
         {
             bool fileCheck = ProcessFileTransactions(file);
             AdaCreditRepository.Transaction.MoveTransactionFile(file, fileCheck);
+            if (!fileCheck)
+                failedTransactionFiles.Add(file);
         }
-
-        List<AdaCreditRepository.TransactionErrorData> failedTransactionFiles = AdaCreditRepository.TransactionErrors.GetAllErrors();
 
         if (failedTransactionFiles.Count() > 0)
         {
             Console.WriteLine("An error has occurred processing the transaction files below:");
-            foreach (AdaCreditRepository.TransactionErrorData error in failedTransactionFiles)
+            foreach (string failedFilePath in failedTransactionFiles)
             {
-                Console.WriteLine(error.FileName);
+                Console.WriteLine(failedFilePath);
             }
         }
         else
