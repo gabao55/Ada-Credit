@@ -18,13 +18,7 @@ public sealed class TransactionErrors
 
         DataFilePath = dataFilePath;
     }
-
-    public static void ResetErrors()
-    {
-        string initialData = "Id,FileName,Date,OriginBankCode,OriginBankBranch,OriginBankAccountNumber,DestinationBankCode,DestinationBankBranch,DestinationBankAccountNumber,TransactionType,TransactionDirection,TransactionValue,Error";
-        File.WriteAllText(DataFilePath, initialData);
-    }
-
+    
     public static List<TransactionErrorData> GetAllErrors()
     {
         using (var reader = new StreamReader(DataFilePath))
