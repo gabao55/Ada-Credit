@@ -1,4 +1,3 @@
-using System;
 using AdaCreditRepository;
 
 namespace AdaCreditDomain;
@@ -6,6 +5,7 @@ namespace AdaCreditDomain;
 public sealed class Login
 {
     public static void Start() {
+        CheckAppResources();
         bool isFirstAcces = Admin.CheckFirstAccess();
         
         if (isFirstAcces)
@@ -25,11 +25,26 @@ public sealed class Login
         }
     }
 
+    private static void CheckAppResources()
+    {
+        Admin.CreateData();
+        AdaCreditRepository.Client.CreateData();
+        AdaCreditRepository.Account.CreateData();
+        AdaCreditRepository.Employee.CreateData();
+        AdaCreditRepository.Transaction.CreateData();
+        AdaCreditRepository.TransactionErrors.CreateData();
+    }
+
     private static void FirstAccess()
     {
         Console.Clear();
 
-        Admin.CreateData();
+        bool isUserValid = FurtherAcces();
+        while (!isUserValid)
+        {
+            Console.WriteLine("Username or password invalid. Try again:");
+            isUserValid = FurtherAcces();
+        }
 
         Console.WriteLine("Welcome to Ada Credit. Since this is your first access, you must define your username and password below:");
 

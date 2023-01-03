@@ -11,7 +11,7 @@ public sealed class Employee
 
         List<AdaCreditRepository.EmployeeData> EmployeesList = AdaCreditRepository.Employee.GetAllEmployees();
 
-        int id = EmployeesList.Last().Id + 1;
+        int id = EmployeesList.Count() == 0 ? 1 : EmployeesList.Last().Id + 1;
         
         Console.Write("Insert Employee's name: ");        
         string? name = Console.ReadLine();

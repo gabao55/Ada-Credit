@@ -40,7 +40,11 @@ public sealed class Admin
     }
 
     public static void CreateData() {
-        string initialData = "username: *user*\npassword: *pass*";
+        if (File.Exists(DataFilePath))
+            return;
+            
+        string hashedPassword = HashPassword("*pass*", salt);
+        string initialData = $"username: *user*\npassword: {hashedPassword}";
         File.WriteAllText(DataFilePath, initialData);
     }
 

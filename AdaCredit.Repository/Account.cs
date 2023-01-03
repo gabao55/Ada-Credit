@@ -17,6 +17,14 @@ public sealed class Account
         DataFilePath = dataFilePath;
     }
 
+    public static void CreateData() {
+        if (File.Exists(DataFilePath))
+            return;
+            
+        string initialData = "Id,Number,Branch,Balance,ClientId";
+        File.WriteAllText(DataFilePath, initialData);
+    }
+
     public static List<AccountData> GetAllAccounts()
     {
         using (var reader = new StreamReader(DataFilePath))

@@ -27,6 +27,23 @@ public sealed class Transaction
         FailedFilesPath = failedFilesPath;
     }
 
+    public static void CreateData() {
+        if (!Directory.Exists(DataFilesPath))
+        {
+            Directory.CreateDirectory(DataFilesPath);
+        }
+
+        if (!Directory.Exists(SuccessfulFilesPath))
+        {
+            Directory.CreateDirectory(SuccessfulFilesPath);
+        }
+
+        if (!Directory.Exists(FailedFilesPath))
+        {
+            Directory.CreateDirectory(FailedFilesPath);
+        }
+    }
+
     public static List<string> GetTransactionFiles() {
         return Directory.GetFiles(DataFilesPath, "*.csv").ToList();
     }

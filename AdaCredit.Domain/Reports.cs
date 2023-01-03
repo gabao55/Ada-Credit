@@ -4,19 +4,11 @@ namespace AdaCreditDomain;
 
 public sealed class Report
 {
-    private static List<AdaCreditRepository.ClientData> allClients { get; set; }
-    private static List<AdaCreditRepository.EmployeeData> allEmployees { get; set; }
-
-    static Report()
-    {
-        allClients = AdaCreditRepository.Client.GetAllClients();
-        allEmployees = AdaCreditRepository.Employee.GetAllEmployees();
-    }
-    
     public static void ActiveClients()
     {
         Console.Clear();
 
+        List<AdaCreditRepository.ClientData> allClients = AdaCreditRepository.Client.GetAllClients();
         List<AdaCreditRepository.ClientData> activeClients = allClients.FindAll(c => c.IsActive == true);
 
         if (activeClients.Count() == 0)
@@ -24,6 +16,7 @@ public sealed class Report
             Console.WriteLine("No active clients registered");
             Console.WriteLine("\nPress enter to return to reports' menu");
             Console.ReadLine();
+            return;
         }
 
         var table = new ConsoleTable("Name", "Document", "Last login", "Account number", "Branch", "Balance");
@@ -52,6 +45,7 @@ public sealed class Report
     {
         Console.Clear();
 
+        List<AdaCreditRepository.ClientData> allClients = AdaCreditRepository.Client.GetAllClients();
         List<AdaCreditRepository.ClientData> activeClients = allClients.FindAll(c => c.IsActive == false);
 
         if (activeClients.Count() == 0)
@@ -59,6 +53,7 @@ public sealed class Report
             Console.WriteLine("No inactive clients registered");
             Console.WriteLine("\nPress enter to return to reports' menu");
             Console.ReadLine();
+            return;
         }
 
         var table = new ConsoleTable("Name", "Document", "Last login");
@@ -82,13 +77,15 @@ public sealed class Report
     {
         Console.Clear();
 
-        List<AdaCreditRepository.EmployeeData> activeEmployees = allEmployees.FindAll(e => e.IsActive == false);
+        List<AdaCreditRepository.EmployeeData> allEmployees = AdaCreditRepository.Employee.GetAllEmployees();
+        List<AdaCreditRepository.EmployeeData> activeEmployees = allEmployees.FindAll(e => e.IsActive == true);
 
         if (activeEmployees.Count() == 0)
         {
             Console.WriteLine("No active employees registered");
             Console.WriteLine("\nPress enter to return to reports' menu");
             Console.ReadLine();
+            return;
         }
 
         var table = new ConsoleTable("Name", "Document", "Last login");
@@ -119,6 +116,7 @@ public sealed class Report
             Console.WriteLine("No active clients registered");
             Console.WriteLine("\nPress enter to return to reports' menu");
             Console.ReadLine();
+            return;
         }
 
         var table = new ConsoleTable(

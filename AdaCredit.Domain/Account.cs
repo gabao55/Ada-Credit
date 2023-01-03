@@ -16,7 +16,7 @@ public sealed class Account
             newNumber = GenerateRandomAccountNumber();
         } while (accountsList.Any(account => account.Number == newNumber));
 
-        int id = accountsList.Last().Id + 1;
+        int id = accountsList.Count() == 0 ? 1 : accountsList.Last().Id + 1;
         double balance = 0;
 
         AdaCreditRepository.AccountData newAccount = new AdaCreditRepository.AccountData {

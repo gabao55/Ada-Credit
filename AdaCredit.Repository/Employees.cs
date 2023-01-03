@@ -17,6 +17,14 @@ public sealed class Employee
         DataFilePath = dataFilePath;
     }
 
+    public static void CreateData() {
+        if (File.Exists(DataFilePath))
+            return;
+            
+        string initialData = "Id,Name,Document,Username,Password,LastLogin,IsActive";
+        File.WriteAllText(DataFilePath, initialData);
+    }
+
     public static List<EmployeeData> GetAllEmployees()
     {
         using (var reader = new StreamReader(DataFilePath))

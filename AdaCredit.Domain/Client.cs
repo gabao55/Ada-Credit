@@ -10,7 +10,7 @@ public sealed class Client
 
         List<AdaCreditRepository.ClientData> clientsList = AdaCreditRepository.Client.GetAllClients();
 
-        int id = clientsList.Last().Id + 1;
+        int id = clientsList.Count() == 0 ? 1 : clientsList.Last().Id + 1;
         
         Console.Write("Insert client's name: ");        
         string? name = Console.ReadLine();

@@ -6,7 +6,7 @@ namespace AdaCreditConsole
     {
         static void Main(string[] args)
         {
-            // Login.Start();
+            Login.Start();
             Menu.Show(args);
         }
     }

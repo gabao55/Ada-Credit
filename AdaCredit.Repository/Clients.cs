@@ -17,6 +17,14 @@ public sealed class Client
         DataFilePath = dataFilePath;
     }
 
+    public static void CreateData() {
+        if (File.Exists(DataFilePath))
+            return;
+            
+        string initialData = "Id,Name,Document,LastLogin,IsActive";
+        File.WriteAllText(DataFilePath, initialData);
+    }
+
     public static List<ClientData> GetAllClients()
     {
         using (var reader = new StreamReader(DataFilePath))

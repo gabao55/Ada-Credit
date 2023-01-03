@@ -18,6 +18,14 @@ public sealed class TransactionErrors
 
         DataFilePath = dataFilePath;
     }
+
+    public static void CreateData() {
+        if (File.Exists(DataFilePath))
+            return;
+            
+        string initialData = "Id,FileName,Date,OriginBankCode,OriginBankBranch,OriginBankAccountNumber,DestinationBankCode,DestinationBankBranch,DestinationBankAccountNumber,TransactionType,TransactionDirection,TransactionValue,Error";
+        File.WriteAllText(DataFilePath, initialData);
+    }
     
     public static List<TransactionErrorData> GetAllErrors()
     {
