@@ -1,6 +1,4 @@
 using CsvHelper;
-using CsvHelper.Configuration;
-using CsvHelper.Configuration.Attributes;
 using System.Globalization;
 
 namespace AdaCreditRepository;
@@ -51,6 +49,14 @@ public sealed class Account
     {
         List<AccountData> records = GetAllAccounts();
         AccountData? account = records.FirstOrDefault(a => a.Number == accountNumber);
+
+        return account;
+    }
+
+    public static AccountData GetAccountDataByClientId(int clientId)
+    {
+        List<AccountData> records = GetAllAccounts();
+        AccountData account = records.First(a => a.ClientId == clientId);
 
         return account;
     }

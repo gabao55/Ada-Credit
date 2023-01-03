@@ -27,10 +27,10 @@ public sealed class Menu
     {
 
         var clientsMenu = new ConsoleMenu(args, level: 1)
-            .Add("Register new client", () => AdaCreditDomain.Client.CreateClient())
-            .Add("Query existing client data", () => AdaCreditDomain.Client.GetClientData())
-            .Add("Change existing client data", () => AdaCreditDomain.Client.ChangeClientData())
-            .Add("Deactivate existing client", () => AdaCreditDomain.Client.DeactivateClientData())
+            .Add("Register new client", () => Client.CreateClient())
+            .Add("Query existing client data", () => Client.GetClientData())
+            .Add("Change existing client data", () => Client.ChangeClientData())
+            .Add("Deactivate existing client", () => Client.DeactivateClientData())
             .Add("Get back to main menu", ConsoleMenu.Close)
             .Configure(config =>
             {
@@ -47,9 +47,9 @@ public sealed class Menu
     private static void ShowEmployeesMenu(string[] args)
     {
         var clientsMenu = new ConsoleMenu(args, level: 1)
-            .Add("Register new employee", () => AdaCreditDomain.Employee.CreateEmployee())
-            .Add("Change existing employee password", () => AdaCreditDomain.Employee.ChangeEmployeePassword())
-            .Add("Deactivate employee registration", () => AdaCreditDomain.Employee.DeactivateEmployeeRegistration())
+            .Add("Register new employee", () => Employee.CreateEmployee())
+            .Add("Change existing employee password", () => Employee.ChangeEmployeePassword())
+            .Add("Deactivate employee registration", () => Employee.DeactivateEmployeeRegistration())
             .Add("Get back to main menu", ConsoleMenu.Close)
             .Configure(config =>
             {
@@ -66,7 +66,7 @@ public sealed class Menu
     private static void ShowTransactionsMenu(string[] args)
     {
         var clientsMenu = new ConsoleMenu(args, level: 1)
-            .Add("Process Transactions (Bank Reconciliation)", () => AdaCreditDomain.Transactions.ProcessAllTransactions())
+            .Add("Process Transactions (Bank Reconciliation)", () => Transactions.ProcessAllTransactions())
             .Add("Get back to main menu", ConsoleMenu.Close)
             .Configure(config =>
             {
@@ -83,10 +83,10 @@ public sealed class Menu
     private static void ShowReportsMenu(string[] args)
     {
         var clientsMenu = new ConsoleMenu(args, level: 1)
-            .Add("View all active clients with their respective balances", () => SomeAction("Sub_One"))
-            .Add("View all existing clients", () => SomeAction("Sub_Two"))
-            .Add("View all active employees and their last login date and time", () => SomeAction("Sub_Three"))
-            .Add("View transactions with error (transaction and error details)", () => SomeAction("Sub_Four"))
+            .Add("View all active clients with their respective balances", () => Report.ActiveClients())
+            .Add("View all inactive clients", () => Report.InactiveClients())
+            .Add("View all active employees and their last login date and time", () => Report.ActiveEmployees())
+            .Add("View transactions with error (transaction and error details)", () => Report.TransactionErrors())
             .Add("Get back to main menu", ConsoleMenu.Close)
             .Configure(config =>
             {
