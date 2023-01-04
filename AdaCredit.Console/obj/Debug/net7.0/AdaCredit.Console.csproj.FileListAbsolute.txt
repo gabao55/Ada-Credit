@@ -24,3 +24,4 @@
 /home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/bin/Debug/net7.0/BCrypt.Net-Next.dll
 /home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/bin/Debug/net7.0/CsvHelper.dll
 /home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/bin/Debug/net7.0/ConsoleTables.dll
+/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Console/bin/Debug/net7.0/Bogus.dll

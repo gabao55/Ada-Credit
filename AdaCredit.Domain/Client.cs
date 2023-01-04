@@ -1,4 +1,5 @@
 ﻿using static BCrypt.Net.BCrypt;
+using Bogus;
 
 namespace AdaCreditDomain;
 
@@ -46,6 +47,29 @@ public sealed class Client
         AdaCreditRepository.Client.CreateNewClient(newClient);
 
         AdaCreditDomain.Account.CreateNewAccount(newClient.Id);
+    }
+
+    public static void Seed()
+    {
+        var faker = new Faker();
+
+        for (int i = 1; i < 100; i++)
+        {
+            string name = faker.Name.FullName();
+            string document = faker.Random.ReplaceNumbers("###########");
+            AdaCreditRepository.ClientData newClient = new AdaCreditRepository.ClientData {
+                Id = i,
+                Name = name,
+                Document = document,
+                IsActive = true,
+                Login = name.Split(" ").Last() + document.Substring(0,3),
+                Password = HashPassword(document.Substring(0, document.Length < 6 ? document.Length : 6))
+            };
+
+            AdaCreditRepository.Client.CreateNewClient(newClient);
+
+            AdaCreditDomain.Account.CreateNewAccount(newClient.Id);
+        }
     }
 
     public static void GetClientData()

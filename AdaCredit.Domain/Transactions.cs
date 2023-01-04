@@ -4,6 +4,14 @@ namespace AdaCreditDomain;
 
 public sealed class Transactions
 {
+    public static void Seed()
+    {
+        AdaCreditRepository.Transaction.CreateSuccessfullTransaction();
+        AdaCreditRepository.Transaction.CreateFailedAccountNotFoundTransaction();
+        AdaCreditRepository.Transaction.CreateFailedBalanceTransaction();
+        AdaCreditRepository.Transaction.CreateFailedTEFTransaction();
+    }
+    
     public static void ProcessAllTransactions()
     {
         Console.Clear();

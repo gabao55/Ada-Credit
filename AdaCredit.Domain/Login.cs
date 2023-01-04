@@ -11,6 +11,7 @@ public sealed class Login
         if (isFirstAcces)
         {
             FirstAccess();
+            PopulateData();
         }
         else
         {
@@ -33,6 +34,29 @@ public sealed class Login
         AdaCreditRepository.Employee.CreateData();
         AdaCreditRepository.Transaction.CreateData();
         AdaCreditRepository.TransactionErrors.CreateData();
+    }
+
+    private static void PopulateData()
+    {
+        Console.Clear();
+
+        Console.Write("Would you like to populate app's data with fake data for testing it (y/n)?");
+        string? shouldPopulate = Console.ReadLine();
+
+        while (shouldPopulate == null || (shouldPopulate != "y" && shouldPopulate != "n"))
+        {
+            Console.Write("Invalid answer, would you like to populate app's data with fake data for testing it (y/n)?");
+            shouldPopulate = Console.ReadLine();
+        }
+
+        if (shouldPopulate == "n")
+            return;
+
+        Console.WriteLine("Populating database with fake data, please wait...");
+
+        Client.Seed();
+        Employee.Seed();
+        Transactions.Seed();
     }
 
     private static void FirstAccess()

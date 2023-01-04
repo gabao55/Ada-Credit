@@ -1,4 +1,4 @@
-using System;
+using Bogus;
 using static BCrypt.Net.BCrypt;
 
 namespace AdaCreditDomain;
@@ -75,6 +75,29 @@ public sealed class Employee
         Console.WriteLine("\nEmployee successfuly registered.");
         Console.WriteLine("\nPress enter to return to client's menu");
         Console.ReadLine();
+    }
+
+    public static void Seed()
+    {
+        var faker = new Faker();
+
+        for (int i = 1; i < 100; i++)
+        {
+            string name = faker.Name.FullName();
+            string document = faker.Random.ReplaceNumbers("###########");
+
+            AdaCreditRepository.EmployeeData newEmployee = new AdaCreditRepository.EmployeeData {
+                Id = i,
+                Name = name,
+                Document = document,
+                Username = name.Split(" ").Last() + document.Substring(0,3),
+                Password = HashPassword(document.Substring(0, document.Length < 6 ? document.Length : 6)),
+                LastLogin = faker.Date.Past(),
+                IsActive = true,
+            };
+
+            AdaCreditRepository.Employee.CreateNewEmployee(newEmployee);
+        }
     }
 
     public static void DeactivateEmployeeRegistration()

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ehwKd8zFvfZfJh/IyftCOI0ebQEkVJYhN6rcG3B4CjMOEUzASRoQFAEQOBtiXFRZRPKPmRfnnM3j7iYB1M0sLg==",
+  "dgSpecHash": "4M9Xy+EiTTU02G7G7RO7e3UqPmwVDbM8VDOGTHeaO0meF7msVIyhGLKVAZjlPaDwXMFuYMHqfaB8sSlJ3O7FQQ==",
   "success": true,
   "projectFilePath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Domain/AdaCredit.Domain.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/bogus/34.0.2/bogus.34.0.2.nupkg.sha512",
     "/home/gabriel/.nuget/packages/consolemenu-simple/2.4.3/consolemenu-simple.2.4.3.nupkg.sha512",
     "/home/gabriel/.nuget/packages/consoletables/2.4.2/consoletables.2.4.2.nupkg.sha512",
     "/home/gabriel/.nuget/packages/csvhelper/30.0.1/csvhelper.30.0.1.nupkg.sha512",
