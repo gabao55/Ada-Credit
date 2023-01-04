@@ -1,4 +1,4 @@
-# Ada Credit
+<h1 align="center">Ada Credit</h1>
 
 ## Description
 
