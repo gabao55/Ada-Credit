@@ -36,3 +36,6 @@ To run the application locally, you must follow the instructions below:
     username: *user*
     password: *pass*
     ```
+
+5. Change your credentials:
+6. Decide if you want to populate the database with fake data for testing (in case you want, type "y", otherwise, type "n", than hit Enter key).
