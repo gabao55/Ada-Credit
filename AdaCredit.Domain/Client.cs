@@ -156,7 +156,7 @@ public sealed class Client
             document = Console.ReadLine();
         }
         
-        while (document == null || clientsList.FirstOrDefault(client => client.Document == document) != client)
+        while (document == null || clientsList.FirstOrDefault(client => client.Document == document) != null)
         {
             Console.Write("Document already registered, please insert another document: ");
             document = Console.ReadLine();
