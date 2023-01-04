@@ -21,7 +21,7 @@ public sealed class Client
         if (File.Exists(DataFilePath))
             return;
             
-        string initialData = "Id,Name,Document,LastLogin,IsActive";
+        string initialData = "Id,Name,Document,Login,Password,LastLogin,IsActive";
         File.WriteAllText(DataFilePath, initialData);
     }
 
