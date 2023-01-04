@@ -1,4 +1,4 @@
-﻿using System;
+﻿using static BCrypt.Net.BCrypt;
 
 namespace AdaCreditDomain;
 
@@ -39,6 +39,8 @@ public sealed class Client
             Name = name,
             Document = document,
             IsActive = true,
+            Login = name.Split(" ").Last() + document.Substring(0,3),
+            Password = HashPassword(document.Substring(0, document.Length < 6 ? document.Length : 6))
         };
 
         AdaCreditRepository.Client.CreateNewClient(newClient);
