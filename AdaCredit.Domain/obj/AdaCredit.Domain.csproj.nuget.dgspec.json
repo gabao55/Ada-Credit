@@ -113,6 +113,10 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "Bogus": {
+              "target": "Package",
+              "version": "[34.0.2, )"
+            },
             "CsvHelper": {
               "target": "Package",
               "version": "[30.0.1, )"

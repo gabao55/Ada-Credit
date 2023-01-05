@@ -129,7 +129,6 @@ public sealed class Report
             "Destination bank branch",
             "Destination account number",
             "Transaction type",
-            "Transaction direction",
             "Transaction value",
             "Error details"
         );
@@ -146,7 +145,6 @@ public sealed class Report
                 error.DestinationBankBranch,
                 error.DestinationBankAccountNumber,
                 error.TransactionType,
-                error.TransactionDirection == 0 ? "Debit" : "Credit",
                 $"R$ {error.TransactionValue}",
                 error.Error
             );

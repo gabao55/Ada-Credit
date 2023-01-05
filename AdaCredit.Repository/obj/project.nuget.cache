@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OMarRzHZfLcC0HcuPeR/Fs0AHlb9i0ko/LY2pF1NeiDuFa1n28RHFTu2Vqn7uqArgEDIdEuRVYeQWRzxhAh8kw==",
+  "dgSpecHash": "suw8tuzZz54fA6nnTaVzwVfeEY3WsSo6iylShUdad2FoT6fgQo/b9oMnv0780RD6miHf6O6/U215ZKha9foMug==",
   "success": true,
   "projectFilePath": "/home/gabriel/Documents/Trainee - Credit Suisse 2022/Curso/Introdução/AdaCredit/AdaCredit.Repository/AdaCredit.Repository.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/bogus/34.0.2/bogus.34.0.2.nupkg.sha512",
     "/home/gabriel/.nuget/packages/csvhelper/30.0.1/csvhelper.30.0.1.nupkg.sha512"
   ],
   "logs": []

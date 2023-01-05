@@ -87,7 +87,7 @@ public sealed class Transactions
             }
 
             double tax = GetTransactionTax(transacation.TransactionType, transacation.TransactionValue);
-            if (transacation.TransactionDirection == 0 && originAccount != null)
+            if (originAccount != null)
             {
                 if (transacation.TransactionValue + tax > originAccount.Balance)
                 {
@@ -97,17 +97,6 @@ public sealed class Transactions
                 AdaCreditRepository.Account.UpdateBalance(originAccount.Id, originAccount.Balance - (transacation.TransactionValue + tax));
                 if (destinationAccount != null)
                     AdaCreditRepository.Account.UpdateBalance(destinationAccount.Id, destinationAccount.Balance + transacation.TransactionValue);
-            }
-            if (transacation.TransactionDirection == 1 && destinationAccount != null)
-            {
-                if (transacation.TransactionValue + tax > destinationAccount.Balance)
-                {
-                    AdaCreditRepository.TransactionErrors.CreateNewError(transacation, filePath, "Destination account has not enough money");
-                    return false;
-                }
-                AdaCreditRepository.Account.UpdateBalance(destinationAccount.Id, destinationAccount.Balance - (transacation.TransactionValue + tax));
-                if (originAccount != null)
-                    AdaCreditRepository.Account.UpdateBalance(originAccount.Id, originAccount.Balance + transacation.TransactionValue);
             }
         }
 

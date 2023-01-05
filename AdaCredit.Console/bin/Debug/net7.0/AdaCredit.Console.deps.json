@@ -147,6 +147,7 @@
       "AdaCredit.Repository/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
+          "Bogus": "34.0.2",
           "CsvHelper": "30.0.1"
         },
         "runtime": {

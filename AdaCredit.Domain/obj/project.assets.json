@@ -185,6 +185,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
+          "Bogus": "34.0.2",
           "CsvHelper": "30.0.1"
         },
         "compile": {

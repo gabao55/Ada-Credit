@@ -54,8 +54,12 @@ public sealed class Login
 
         Console.WriteLine("Populating database with fake data, please wait...");
 
-        Client.Seed();
-        Employee.Seed();
+        if (AdaCreditRepository.Client.GetAllClients().Count() == 0)
+            Client.Seed();
+        
+        if (AdaCreditRepository.Employee.GetAllEmployees().Count() == 0)
+            Employee.Seed();
+
         Transactions.Seed();
     }
 

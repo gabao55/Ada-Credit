@@ -2,6 +2,7 @@ using CsvHelper;
 using System.Globalization;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
+using Bogus;
 
 namespace AdaCreditRepository;
 
@@ -29,35 +30,43 @@ public sealed class Transaction
 
     public static void CreateSuccessfullTransaction()
     {
-        string initialData = "771,0001,483667,771,1,872870,TEF,0,1\n771,0001,483667,771,1,872870,TEF,1,2";
-        string fileName = Path.Combine(DataFilesPath, "Santander-20210313.csv");
+        var faker = new Faker();
+        string fakeDate = String.Join("", faker.Date.PastDateOnly().ToString().Split("/").Reverse().ToArray());
+        string initialData = "771,0001,483667,771,1,872870,TEF,1\n771,0001,483667,771,1,872870,TEF,2";
+        string fileName = Path.Combine(DataFilesPath, $"Santander-{fakeDate}.csv");
         File.WriteAllText(fileName, initialData);
     }
 
     public static void CreateFailedBalanceTransaction()
     {
+        var faker = new Faker();
+        string fakeDate = String.Join("", faker.Date.PastDateOnly().ToString().Split("/").Reverse().ToArray());
         List<ClientData> clients = Client.GetAllClients();
         string firstClientAccountNumber = Account.GetAccountDataByClientId(clients.First().Id).Number;
         string lastClientAccountNumber = Account.GetAccountDataByClientId(clients.Last().Id).Number;
-        string initialData = $"777,0001,{firstClientAccountNumber},777,1,{lastClientAccountNumber},TEF,0,30.55\n777,00001,{firstClientAccountNumber},777,1,{lastClientAccountNumber},TEF,1,20";
-        string fileName = Path.Combine(DataFilesPath, "Safra-20210313.csv");
+        string initialData = $"777,0001,{firstClientAccountNumber},777,1,{lastClientAccountNumber},TEF,30.55\n777,00001,{firstClientAccountNumber},777,1,{lastClientAccountNumber},TEF,20";
+        string fileName = Path.Combine(DataFilesPath, $"Safra-{fakeDate}.csv");
         File.WriteAllText(fileName, initialData);
     }
 
     public static void CreateFailedTEFTransaction()
     {
+        var faker = new Faker();
+        string fakeDate = String.Join("", faker.Date.PastDateOnly().ToString().Split("/").Reverse().ToArray());
         List<ClientData> clients = Client.GetAllClients();
         AccountData firstClientAccountNumber = Account.GetAccountDataByClientId(clients.First().Id);
         AccountData lastClientAccountNumber = Account.GetAccountDataByClientId(clients.Last().Id);
-        string initialData = $"777,0001,{firstClientAccountNumber},775,1,{lastClientAccountNumber},TEF,0,30.55";
-        string fileName = Path.Combine(DataFilesPath, "Itau-20210313.csv");
+        string initialData = $"777,0001,{firstClientAccountNumber},775,1,{lastClientAccountNumber},TEF,30.55";
+        string fileName = Path.Combine(DataFilesPath, $"Itau-{fakeDate}.csv");
         File.WriteAllText(fileName, initialData);
     }
 
     public static void CreateFailedAccountNotFoundTransaction()
     {
-        string initialData = "777,0001,1,777,1,2,TEF,0,30.55";
-        string fileName = Path.Combine(DataFilesPath, "Nubank-20210313.csv");
+        var faker = new Faker();
+        string fakeDate = String.Join("", faker.Date.PastDateOnly().ToString().Split("/").Reverse().ToArray());
+        string initialData = "777,0001,1,777,1,2,TEF,30.55";
+        string fileName = Path.Combine(DataFilesPath, $"Nubank-{fakeDate}.csv");
         File.WriteAllText(fileName, initialData);
     }
 
@@ -132,7 +141,5 @@ public sealed class TransactionData
     [Index(6)]
     public string TransactionType { get; set; }
     [Index(7)]
-    public int TransactionDirection { get; set; }
-    [Index(8)]
     public double TransactionValue { get; set; }
 }

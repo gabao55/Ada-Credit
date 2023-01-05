@@ -54,7 +54,6 @@ public sealed class TransactionErrors
                 DestinationBankBranch = data.DestinationBankBranch,
                 DestinationBankAccountNumber = data.DestinationBankAccountNumber,
                 TransactionType = data.TransactionType,
-                TransactionDirection = data.TransactionDirection,
                 TransactionValue = data.TransactionValue,
                 Error = error,
             }
@@ -75,8 +74,6 @@ public sealed class TransactionErrors
                 return $"Account with number {data.DestinationBankAccountNumber} not found";
             case "Origin account has not enough money":
                 return $"Account with number {data.OriginBankAccountNumber} has not enough money to complete transaction with value R$ {data.TransactionValue}";
-            case "Destination account has not enough money":
-                return $"Account with number {data.DestinationBankAccountNumber} has not enough money to complete transaction with value ${data.TransactionValue}";
             default:
                 return "Unidentified error";
         }
@@ -103,7 +100,6 @@ public sealed class TransactionErrorData
     public string DestinationBankBranch { get; set; }
     public string DestinationBankAccountNumber { get; set; }
     public string TransactionType { get; set; }
-    public int TransactionDirection { get; set; }
     public double TransactionValue { get; set; }
     public string Error { get; set; }
 }
